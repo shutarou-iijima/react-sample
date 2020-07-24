@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Title from "./components/Title";
+import Header from "./components/Title";
 
 ReactDOM.render(
     <div className="twitter">
-        <Title />
+        <Header />
     </div>,
     document.getElementById('root')
 );

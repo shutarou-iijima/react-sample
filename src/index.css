@@ -4,3 +4,19 @@ body {
     font-family: 'Noto Serif JP', serif;
     text-align: center;
 }
+
+a {
+    color: black;
+}
+
+.header__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__container .header__item--icon svg{
+    height: 3em;
+    width: 3em;
+    padding: 4px 0 0 10px;
+}

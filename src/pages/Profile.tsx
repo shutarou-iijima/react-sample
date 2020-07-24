@@ -1,12 +1,6 @@
 import React from "react";
 
-interface Props {
-    onLoad: () => void
-}
-
-function Profile(props: Props) {
-    props.onLoad()
-
+function Profile() {
     return (
         <div className="profile">
             profile

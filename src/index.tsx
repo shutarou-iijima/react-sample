@@ -55,13 +55,13 @@ class Twitter extends React.Component<Props, State> {
                     <main>
                         <Switch>
                             <Route path="/about">
-                                <About onLoad={ () => { this.setSelectedMenu(3) } } />
+                                <About />
                             </Route>
                             <Route path="/profile">
-                                <Profile onLoad={ () => { this.setSelectedMenu(2) } } />
+                                <Profile />
                             </Route>
                             <Route path="/">
-                                <Timeline onLoad={ () => { this.setSelectedMenu(1) } }/>
+                                <Timeline />
                             </Route>
                         </Switch>
                     </main>

@@ -2,13 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithubAlt } from "@fortawesome/free-brands-svg-icons";
 
-interface Props {
-    onLoad: () => void
-}
-
-function About(props: Props) {
-    props.onLoad()
-
+function About() {
     return (
         <div className="about">
             <p>このサイトは完全にツイッターです。</p>

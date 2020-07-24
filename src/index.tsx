@@ -24,11 +24,26 @@ class Twitter extends React.Component<Props, State> {
 
         this.state = {
             menuItems: [
-                { to: '/', title: 'タイムライン', selected: true },
-                { to: '/profile', title: 'プロフィール', selected: false },
-                { to: '/about', title: 'このサイトについて', selected: false },
+                { id: 1, to: '/', title: 'タイムライン', selected: true },
+                { id: 2, to: '/profile', title: 'プロフィール', selected: false },
+                { id: 3, to: '/about', title: 'このサイトについて', selected: false },
             ]
         }
+    }
+
+    setSelectedMenu(id: number) {
+        const nowId = this.state.menuItems.find(menuItem => menuItem.selected)!.id
+        if (id === nowId) {
+            return
+        }
+
+        const menuItems = [...this.state.menuItems]
+        menuItems.forEach(menuItem => {
+            menuItem.selected = menuItem.id === id
+        })
+        this.setState({
+            menuItems: menuItems
+        })
     }
 
     render() {
@@ -40,13 +55,13 @@ class Twitter extends React.Component<Props, State> {
                     <main>
                         <Switch>
                             <Route path="/about">
-                                <About />
+                                <About onLoad={ () => { this.setSelectedMenu(3) } } />
                             </Route>
                             <Route path="/profile">
-                                <Profile />
+                                <Profile onLoad={ () => { this.setSelectedMenu(2) } } />
                             </Route>
                             <Route path="/">
-                                <Timeline />
+                                <Timeline onLoad={ () => { this.setSelectedMenu(1) } }/>
                             </Route>
                         </Switch>
                     </main>

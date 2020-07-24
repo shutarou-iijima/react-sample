@@ -14,16 +14,8 @@ li {
     list-style-type: none;
 }
 
-.header__container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.header__container .header__item--icon svg{
-    height: 3em;
-    width: 3em;
-    padding: 4px 0 0 10px;
+main {
+    margin-top: 40px;
 }
 
 .menu__container {

@@ -13,17 +13,19 @@ ReactDOM.render(
         <div className="twitter">
             <Header />
             <Menu />
-            <Switch>
-                <Route path="/about">
-                    <About />
-                </Route>
-                <Route path="/profile">
-                    <Profile />
-                </Route>
-                <Route path="/">
-                    <Timeline />
-                </Route>
-            </Switch>
+            <main>
+                <Switch>
+                    <Route path="/about">
+                        <About />
+                    </Route>
+                    <Route path="/profile">
+                        <Profile />
+                    </Route>
+                    <Route path="/">
+                        <Timeline />
+                    </Route>
+                </Switch>
+            </main>
         </div>
     </Router>,
     document.getElementById('root')

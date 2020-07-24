@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
-        
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -19,9 +19,12 @@ jobs:
       - name: Install
         run: npm install
 
+      - name: Test
+        run: npm run test
+
       - name: Build
         run: npm run build --if-present
-        
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:

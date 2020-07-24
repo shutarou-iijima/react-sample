@@ -27,5 +27,5 @@ it('renders with value', () => {
     act(() => {
         render(<Square value={'X'} onClick={() => {}}/>, container)
     })
-    expect(container?.textContent).toBe("O")
+    expect(container?.textContent).toBe("X")
 });

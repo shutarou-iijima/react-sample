@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Game from "./components/Game";
+import Title from "./components/Title";
 
 ReactDOM.render(
-    <Game />,
+    <div className="twitter">
+        <Title />
+    </div>,
     document.getElementById('root')
 );

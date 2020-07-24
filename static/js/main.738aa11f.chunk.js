@@ -1,2 +1,0 @@
-(this["webpackJsonpmy-app"]=this["webpackJsonpmy-app"]||[]).push([[0],{3:function(e,t,n){e.exports=n(9)},8:function(e,t,n){},9:function(e,t,n){"use strict";n.r(t);var a=n(0),r=n.n(a),c=n(2),o=n.n(c);n(8);var p=function(){return r.a.createElement("h1",null,"\u30c4\u30a4\u30c3\u30bf\u30fc")};o.a.render(r.a.createElement("div",{className:"twitter"},r.a.createElement(p,null)),document.getElementById("root"))}},[[3,1,2]]]);
-//# sourceMappingURL=main.738aa11f.chunk.js.map

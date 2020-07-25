@@ -18,6 +18,10 @@ main {
     margin-top: 40px;
 }
 
+textarea {
+    font-family: inherit;
+}
+
 .menu__container {
     display: flex;
     justify-content: center;

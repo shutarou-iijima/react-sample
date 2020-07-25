@@ -24,26 +24,11 @@ class Twitter extends React.Component<Props, State> {
 
         this.state = {
             menuItems: [
-                { id: 1, to: '/', title: 'タイムライン', selected: true },
-                { id: 2, to: '/profile', title: 'プロフィール', selected: false },
-                { id: 3, to: '/about', title: 'このサイトについて', selected: false },
+                { id: 1, to: '/', title: 'タイムライン' },
+                { id: 2, to: '/profile', title: 'プロフィール' },
+                { id: 3, to: '/about', title: 'このサイトについて' },
             ]
         }
-    }
-
-    setSelectedMenu(id: number) {
-        const nowId = this.state.menuItems.find(menuItem => menuItem.selected)!.id
-        if (id === nowId) {
-            return
-        }
-
-        const menuItems = [...this.state.menuItems]
-        menuItems.forEach(menuItem => {
-            menuItem.selected = menuItem.id === id
-        })
-        this.setState({
-            menuItems: menuItems
-        })
     }
 
     render() {

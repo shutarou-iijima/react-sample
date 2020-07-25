@@ -5,7 +5,6 @@ export interface MenuItem {
     id: number
     to: string
     title: string
-    selected: boolean
 }
 
 export interface Props {
@@ -15,7 +14,7 @@ export interface Props {
 function Menu({ menuItems }: Props) {
     const liList = menuItems.map((menuItem) => {
         return (
-            <li className={`menu__item ${menuItem.selected && "menu__item--selected"}`} key={menuItem.id}>
+            <li className={"menu__item"} key={menuItem.id}>
                 <Link to={menuItem.to}>
                     {menuItem.title}
                 </Link>

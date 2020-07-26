@@ -34,6 +34,7 @@ function TweetArea({ onClick }: Props) {
                     className="tweetarea__submit"
                     onClick={ () => {
                         onClick(text)
+                        setCount(0)
                         setText('')
                     }}
                 >

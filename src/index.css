@@ -65,3 +65,24 @@ textarea, button{
     height: 30px;
     margin-top: 8px;
 }
+
+.tweetcard__container {
+    margin-top: 40px;
+}
+
+.tweetcard {
+    margin: 10px auto;
+    padding: 20px;
+    border: 1px solid black;
+    width: 600px;
+    text-align: left;
+}
+
+.tweetcard__name {
+    font-size: 1.6em;
+    text-decoration: underline;
+}
+
+.tweetcard__value {
+    margin-top: 10px;
+}

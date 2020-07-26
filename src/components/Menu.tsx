@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 
 export interface MenuItem {
     id: number
@@ -9,15 +9,26 @@ export interface MenuItem {
 
 export interface Props {
     menuItems: MenuItem[]
+    selectedMenuItemId: number
+    onClick: (id: number) => void
 }
 
-function Menu({ menuItems }: Props) {
+function Menu({ menuItems, onClick, selectedMenuItemId }: Props) {
+    const history = useHistory()
+
     const liList = menuItems.map((menuItem) => {
+        const selected = menuItem.id === selectedMenuItemId
+
         return (
-            <li className={"menu__item"} key={menuItem.id}>
-                <Link to={menuItem.to}>
+            <li className={`menu__item ${selected && "menu__item--selected"}`} key={menuItem.id}>
+                <a
+                    onClick={() => {
+                        onClick(menuItem.id)
+                        history.push(menuItem.to)
+                    }}
+                >
                     {menuItem.title}
-                </Link>
+                </a>
             </li>
         )
     })

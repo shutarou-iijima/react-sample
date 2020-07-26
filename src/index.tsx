@@ -15,6 +15,7 @@ interface Props {
 
 interface State {
     menuItems: MenuItem[]
+    selectedMenuItemId: number
 }
 
 class Twitter extends React.Component<Props, State> {
@@ -27,7 +28,8 @@ class Twitter extends React.Component<Props, State> {
                 { id: 1, to: '/', title: 'タイムライン' },
                 { id: 2, to: '/profile', title: 'プロフィール' },
                 { id: 3, to: '/about', title: 'このサイトについて' },
-            ]
+            ],
+            selectedMenuItemId: 1
         }
     }
 
@@ -36,7 +38,11 @@ class Twitter extends React.Component<Props, State> {
             <Router>
                 <div className="twitter">
                     <Header />
-                    <Menu menuItems={this.state.menuItems}/>
+                    <Menu
+                        menuItems={this.state.menuItems}
+                        onClick={(id: number) => { this.setState({ selectedMenuItemId: id }) }}
+                        selectedMenuItemId={this.state.selectedMenuItemId}
+                    />
                     <main>
                         <Switch>
                             <Route path="/about">

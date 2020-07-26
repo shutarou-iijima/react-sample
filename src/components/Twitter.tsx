@@ -10,7 +10,7 @@ import User from "../types/User";
 import Tweet from "../types/Tweet";
 
 function Twitter() {
-    const [menuItems, setMenuItems] = useState<MenuItem[]>([
+    const [menuItems] = useState<MenuItem[]>([
         { id: 1, to: '/', title: 'タイムライン' },
         { id: 2, to: '/profile', title: 'プロフィール' },
         { id: 3, to: '/about', title: 'このサイトについて' },

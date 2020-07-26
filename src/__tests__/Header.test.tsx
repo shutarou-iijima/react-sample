@@ -1,20 +1,16 @@
 // @ts-ignore
 import {render, unmountComponentAtNode} from "react-dom";
 import {act} from "react-dom/test-utils";
-import Square from "../components/Square";
+import Header from "../components/Header";
 import React from "react";
 
 let container: HTMLElement | null = null;
 beforeEach(() => {
-    console.log('before each')
-    // setup a DOM element as a render target
     container = document.createElement("div");
     document.body.appendChild(container);
 });
 
 afterEach(() => {
-    console.log('after each')
-    // cleanup on exiting
     if (container === null) {
         return
     }
@@ -25,7 +21,7 @@ afterEach(() => {
 
 it('renders with value', () => {
     act(() => {
-        render(<Square value={'X'} onClick={() => {}}/>, container)
+        render(<Header />, container)
     })
-    expect(container?.textContent).toBe("X")
+    expect(container?.textContent).toBe("ツイッター")
 });

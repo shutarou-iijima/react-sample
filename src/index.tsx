@@ -6,7 +6,7 @@ import Menu from "./components/Menu";
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 import About from "./pages/About";
 import Profile from "./pages/Profile";
-import Timeline from "./pages/Timeline";
+import Timeline, {Tweet} from "./pages/Timeline";
 import { MenuItem } from "./components/Menu";
 
 interface Props {
@@ -16,6 +16,7 @@ interface Props {
 interface State {
     menuItems: MenuItem[]
     selectedMenuItemId: number
+    tweets: Tweet[]
 }
 
 class Twitter extends React.Component<Props, State> {
@@ -29,7 +30,12 @@ class Twitter extends React.Component<Props, State> {
                 { id: 2, to: '/profile', title: 'プロフィール' },
                 { id: 3, to: '/about', title: 'このサイトについて' },
             ],
-            selectedMenuItemId: 1
+            selectedMenuItemId: 1,
+            tweets: [
+                { id: 3, name: '太郎', value: "ラーメンとは、中華麺とスープを主とし、様々な具（チャーシュー、メンマ、味付け玉子、刻み葱、海苔など）を組み合わせた麺料理。漢字表記は拉麺、老麺[2]または柳麺。"},
+                { id: 2, name: '次郎', value: "あいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえお"},
+                { id: 1, name: '三郎', value: "ラーメン食べたい"},
+            ]
         }
     }
 
@@ -52,7 +58,21 @@ class Twitter extends React.Component<Props, State> {
                                 <Profile />
                             </Route>
                             <Route path="/">
-                                <Timeline />
+                                <Timeline
+                                    tweets={this.state.tweets}
+                                    onClick={ (value) => {
+                                        const id = Math.max(...this.state.tweets.map(tweet => tweet.id)) + 1
+                                        const tweet = {
+                                            id: id,
+                                            name: '名無しの権兵衛',
+                                            value: value,
+                                        }
+                                        const newTweets = [...this.state.tweets].concat(tweet)
+                                        this.setState({
+                                            tweets: newTweets
+                                        })
+                                    }}
+                                />
                             </Route>
                         </Switch>
                     </main>

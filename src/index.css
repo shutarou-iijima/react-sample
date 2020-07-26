@@ -23,7 +23,7 @@ main {
     margin-top: 40px;
 }
 
-textarea, button{
+input, textarea, button{
     font-family: inherit;
 }
 

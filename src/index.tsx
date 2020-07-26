@@ -64,7 +64,16 @@ class Twitter extends React.Component<Props, State> {
                                 <About />
                             </Route>
                             <Route path="/profile">
-                                <Profile />
+                                <Profile
+                                    name={this.state.users[0].name}
+                                    onChange={(value) => {
+                                        const users = [...this.state.users]
+                                        users[0].name = value
+                                        this.setState({
+                                            users: users
+                                        })
+                                    }}
+                                />
                             </Route>
                             <Route path="/">
                                 <Timeline

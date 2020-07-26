@@ -84,5 +84,6 @@ textarea, button{
 }
 
 .tweetcard__value {
+    word-wrap: break-word;
     margin-top: 10px;
 }

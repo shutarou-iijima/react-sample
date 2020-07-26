@@ -9,11 +9,15 @@ import MenuItem from "../types/MenuItem";
 import User from "../types/User";
 import Tweet from "../types/Tweet";
 
-function Twitter() {
+interface Props {
+    root: string
+}
+
+function Twitter({ root }: Props) {
     const [menuItems] = useState<MenuItem[]>([
-        { id: 1, to: '/', title: 'タイムライン' },
-        { id: 2, to: '/profile', title: 'プロフィール' },
-        { id: 3, to: '/about', title: 'このサイトについて' },
+        { id: 1, to: `${root}`, title: 'タイムライン' },
+        { id: 2, to: `${root}profile`, title: 'プロフィール' },
+        { id: 3, to: `${root}about`, title: 'このサイトについて' },
     ])
 
     const [selectedMenuItemId, setSelectedMenuItemId] = useState<number>(1)
@@ -42,10 +46,10 @@ function Twitter() {
                 />
                 <main>
                     <Switch>
-                        <Route path="/about">
+                        <Route path={root + 'about'}>
                             <About />
                         </Route>
-                        <Route path="/profile">
+                        <Route path={root + 'profile'}>
                             <Profile
                                 name={users[0].name}
                                 onChange={(value) => {
@@ -55,7 +59,7 @@ function Twitter() {
                                 }}
                             />
                         </Route>
-                        <Route path="/">
+                        <Route path={root}>
                             <Timeline
                                 users={users}
                                 tweets={tweets}

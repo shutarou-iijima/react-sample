@@ -5,10 +5,10 @@ function TweetArea() {
     return (
         <div className="tweetarea">
             <div>
-                <textarea className="timeline__textarea" />
+                <textarea className="tweetarea__textarea" />
             </div>
             <div>
-                <button type="button" className="timeline__submit">呟く</button>
+                <button type="button" className="tweetarea__submit">呟く</button>
             </div>
         </div>
     )

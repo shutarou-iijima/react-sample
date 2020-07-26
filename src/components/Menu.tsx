@@ -1,11 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom"
-
-export interface MenuItem {
-    id: number
-    to: string
-    title: string
-}
+import MenuItem from "../types/MenuItem";
 
 export interface Props {
     menuItems: MenuItem[]

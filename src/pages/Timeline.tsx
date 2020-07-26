@@ -1,12 +1,7 @@
 import React from "react";
 import TweetArea from "../components/TweetArea";
 import TweetCard from "../components/TweetCard";
-
-export interface Tweet {
-    id: number
-    name: string
-    value: string
-}
+import Tweet from "../types/Tweet";
 
 export interface Props {
     tweets: Tweet[]

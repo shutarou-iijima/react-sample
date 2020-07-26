@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import TweetArea from "../components/TweetArea";
 import TweetCard from "../components/TweetCard";
 

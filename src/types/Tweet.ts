@@ -1,5 +1,5 @@
 export default interface Tweet {
     id: number
-    name: string
+    userId: number
     value: string
 }

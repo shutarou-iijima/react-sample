@@ -41,9 +41,9 @@ class Twitter extends React.Component<Props, State> {
                 { id: 4, name: '三郎'},
             ],
             tweets: [
-                { id: 1, name: '三郎', value: "ラーメン食べたい"},
-                { id: 2, name: '次郎', value: "あいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえお"},
-                { id: 3, name: '太郎', value: "ラーメンとは、中華麺とスープを主とし、様々な具（チャーシュー、メンマ、味付け玉子、刻み葱、海苔など）を組み合わせた麺料理。漢字表記は拉麺、老麺[2]または柳麺。"},
+                { id: 1, userId: 2, value: "ラーメン食べたい"},
+                { id: 2, userId: 3, value: "あいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえお"},
+                { id: 3, userId: 4, value: "ラーメンとは、中華麺とスープを主とし、様々な具（チャーシュー、メンマ、味付け玉子、刻み葱、海苔など）を組み合わせた麺料理。漢字表記は拉麺、老麺[2]または柳麺。"},
             ]
         }
     }
@@ -68,12 +68,13 @@ class Twitter extends React.Component<Props, State> {
                             </Route>
                             <Route path="/">
                                 <Timeline
+                                    users={this.state.users}
                                     tweets={this.state.tweets}
                                     onClick={ (value) => {
                                         const id = Math.max(...this.state.tweets.map(tweet => tweet.id)) + 1
                                         const tweet = {
                                             id: id,
-                                            name: '名無しの権兵衛',
+                                            userId: 1,
                                             value: value,
                                         }
                                         const newTweets = [...this.state.tweets].concat(tweet)

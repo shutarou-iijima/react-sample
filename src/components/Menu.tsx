@@ -21,6 +21,7 @@ function Menu({ menuItems, onClick, selectedMenuItemId }: Props) {
 
         return (
             <li className={`menu__item ${selected && "menu__item--selected"}`} key={menuItem.id}>
+                {/*eslint-disable-next-line*/}
                 <a
                     onClick={() => {
                         onClick(menuItem.id)
